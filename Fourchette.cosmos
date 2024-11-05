@@ -1,0 +1,64 @@
+Auteur: pp06gir
+Date: 09.10.2024
+Entreprise: DGEP
+Description: Fourchette
+
+Voici les ordres du programme Fourchette  :
+	//BUT: faire deviner un nombre secret
+
+	Effacer l'écran.
+	Afficher "Bienvenue !\n".
+	Afficher "Vous devez deviner un nombre entre 0 et 100\n".
+
+    //Stockage d'informations sur les nombres 
+	Créer une zone mémoire nommée #nombre avec la valeur 0. 
+	Placer un nombre aléatoire compris entre 0 et 100 dans la zone mémoire nommée #nombre.
+	Créer une zone mémoire nommée #nbuser. 
+	Créer une zone mémoire nommée #tentatives avec la valeur 10. 
+
+
+	//Conditions pour la découverte du nombre généré par l'ordinateur 
+	Répéter tant que #nbuser != #nombre et #tentatives > 0
+
+		//Demander un nombre à l'utilisateur
+		Afficher "\n".
+		Afficher "Devinez le nombre : ".
+		Récupérer la saisie et la stocker dans la zone mémoire nommée #nbuser.
+
+		Si #nombre est plus grand que #nbuser alors 
+			Afficher "Le nombre à deviner est plus grand\n".
+
+			//On met à jour le nb de tentatives sur 10
+			Copier le résultat de (#tentatives - 1) dans #tentatives.
+
+			Si #tentatives est plus petite ou égale à 0 alors
+				Afficher "Vous avez perdu ".
+			sinon
+
+				Afficher "\n".
+				Afficher "Il vous reste #tentatives tentatives".
+			?
+	
+		sinon si #nombre est plus petit que #nbuser alors 
+			Afficher "Le nombre à deviner est plus petit\n".
+
+			//On met à jour le nb de tentatives sur 10
+			Copier le résultat de (#tentatives - 1) dans #tentatives.
+
+			Si #tentatives est plus petite ou égale à 0 alors
+				Afficher "Vous avez perdu !!! ".
+			sinon
+
+				Afficher "\n".
+				Afficher "Il vous reste #tentatives tentatives".
+			?
+
+		et sinon 
+			Afficher "Bravo, vous avez deviné le chiffre".
+		?
+
+	>>
+
+
+Fin de la transmission.
+
